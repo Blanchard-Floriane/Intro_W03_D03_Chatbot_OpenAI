@@ -16,8 +16,8 @@ headers = {
 # un peu de json pour envoyer des informations directement à l'API
 data = {
   "prompt" => "5 parfums de glace",
-  "max_tokens" => 100,
-  #"n" => 1, => ce paramètre définit le nb de réponses différentes pour un même prompt
+  "max_tokens" => 50,
+  "n" => 1, #=> ce paramètre définit le nb de réponses différentes pour un même prompt
   #"stop" => ["\n"], => ici cela indique comme signal d'arrêt qu'en cas de saut de ligne, la génération de données doit s'arrêter
   "temperature" => 0.5
 }
@@ -30,5 +30,5 @@ response_body = JSON.parse(response.body.to_s)
 response_string = response_body['choices'][0]['text'].strip
 
 # ligne qui permet d'envoyer l'information sur ton terminal
-puts "Voici 5 parfums de glace :"
+puts "Voici 5 parfums de glace aléatoire :"
 puts response_string
